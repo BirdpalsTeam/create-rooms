@@ -1,17 +1,16 @@
 const fs = require('fs');
 var PSD = require('psd');
-const room = 'town';
-var psd = PSD.fromFile(`C:/Users/.../${room}.psd`);
-const imagesPath = `C:/Users/.../${room}`; //Path to where are the images you`re going to use
-const spriteSheetPath = `C:/Users/.../${room}`; //Path to your sprite sheet
-const spriteSheetJsonPath = `C:/Users/...`; //Path to your sprite sheet json
+const room = 'cabin';
+var psd = PSD.fromFile(`./examples/${room}/${room}.psd`);
+const imagesPath = `C:/Users/renat/Pictures/Birdpals/Create Room psd/examples/${room}`; //Path to where are the images you`re going to use
+const spriteSheetPath = `C:/Users/renat/Pictures/Birdpals/Create Room psd/examples/${room}`; //Path to your sprite sheet
+const spriteSheetJsonPath = `C:/Users/renat/Pictures/Birdpals/Pixi Js version/public/JSONS`; //Path to your sprite sheet json
 const jsonName = 'roomsJson';
 let dirImages = fs.readdirSync(imagesPath); //Read the data from the directory of your images
 let prefix = `${room}_`;	//The prefix of the images you want to use
 let desiredImageName = `${room}`; //The name of the image of the new spritesheet
 const packer = 'MaxRectsBin'; //Change it if you want
 const packerMethod = 'BestLongSideFit'; //Change it if you want
-//Options of packerMethod = BestShortSideFit, BestLongSideFit, BestAreaFit, BottomLeftRule, ContactPointRule
 var images = new Array();
 
 const texturePacker = require("free-tex-packer-core");
